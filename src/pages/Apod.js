@@ -22,7 +22,7 @@ const Apod = () => {
   }, []);
 
   return (
-    <div class="container">
+    <div className="background--apod">
       <div className="apod-container">
       {apodInfo ? (
         <div class="card text-dark bg-light mb-3 apod-container--card">

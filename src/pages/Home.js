@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="background">
+    <div className="background--home">
       <div className="container">
         <div className="page-selection">
 
