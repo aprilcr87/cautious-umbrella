@@ -1,0 +1,39 @@
+.page-selection {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+
+    &--card {
+        height: 13rem;
+        width: 19rem;
+        background-color: #ffffffc2;
+        text-align: center;
+
+        & h5 {
+            color: $charcoal;
+        }
+
+        & h6 {
+            color: $tan;
+        }
+    }
+}
+
+.apod-container {
+    display: flex;
+    justify-content: center;
+
+    &--img {
+        width: 40rem;
+        margin: 1rem 0 1rem 0;
+    }
+
+    &--card {
+        height: 51rem;
+        width: 60rem;
+        margin-top: 2rem;
+        align-items: center;
+    }
+}

@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.page-selection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh; }
+  .page-selection--card {
+    height: 10rem;
+    width: 18rem; }
+
+.background {
+  height: 95vh;
+  background-image: url("../../public/nasa-yZygONrUBe8-unsplash.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative; }

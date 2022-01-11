@@ -1,0 +1,70 @@
+.footer {
+    background-color: $color-black;
+    padding: 3rem 0;
+    font-size: 1.4rem;
+    color: $geyser;
+
+    &__logo-box {
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+
+    &__logo {
+        width: 15rem;
+        height: auto;
+    }
+
+    &__navigation {
+        border-top: 1px solid $shuttle-gray;
+        padding-top: 2rem;
+        display: inline-block;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: $color-white;
+            background-color: $color-black;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .2s;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-white;
+            background-color: $tan;
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            transform: scale(1.3);
+        }
+    }
+
+    &__copyright {
+        border-top: 1px solid $shuttle-gray;
+        padding-top: 2rem;
+        width: 80%;
+        float: right;
+    }
+
+    &__svg {
+        position: relative;
+        top: 20%;
+        height: 60%;
+        left: 20%;
+        width: 60%;
+    }
+}
+
