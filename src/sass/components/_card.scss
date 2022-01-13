@@ -21,19 +21,21 @@
     }
 }
 
-.apod-container {
+.apod-display {
     display: flex;
     justify-content: center;
 
     &--img {
-        width: 40rem;
+        width: 30rem;
         margin: 1rem 0 1rem 0;
     }
 
     &--card {
-        height: 51rem;
-        width: 60rem;
+        height: 50rem;
+        width: 65rem;
         margin-top: 2rem;
+        overflow-y: auto;
         align-items: center;
+        background-color: #ffffffc2;
     }
 }

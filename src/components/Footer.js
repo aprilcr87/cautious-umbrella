@@ -3,10 +3,10 @@
 const Footer = () => {
     return(
         <div>
-            <footer class="footer">
-            <div class="footer__logo-box">
+            <footer className="footer">
+            <div className="footer__logo-box">
 
-                <div class="footer__svg">
+                <div className="footer__svg">
                     <svg viewBox="0 0 160 160" width="160" height="160">
                         <circle cx="80" cy="80" r="50" fill="#97AEC6"/>
                         <g transform=" matrix(0.866, -0.5, 0.25, 0.433, 80, 80)">
@@ -21,20 +21,20 @@ const Footer = () => {
 
                 
             </div>
-            <div class="row">
-                <div class="col-1-of-2">
-                    <div class="footer__navigation">
-                        <ul class="footer__list">
-                            <li class="footer__item"><a target="_blank" rel="noreferrer" href="https://github.com/aprilcr87" class="footer__link">Github</a></li>
-                            <li class="footer__item"><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/april-rivera87" class="footer__link">LinkedIn</a></li>
+            <div className="row">
+                <div className="col-1-of-2">
+                    <div className="footer__navigation">
+                        <ul className="footer__list">
+                            <li className="footer__item"><a target="_blank" rel="noreferrer" href="https://github.com/aprilcr87" className="footer__link">Github</a></li>
+                            <li className="footer__item"><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/april-rivera87" className="footer__link">LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-1-of-2">
-                    <p class="footer__copyright">
-                        Built by <a target="_blank" rel="noreferrer" href="https://aprilcr87.github.io/portfolio/" class="footer__link">April Barman</a> as a sample project for students at <a target="_blank" rel="noreferrer" href="https://www.zipcodewilmington.com/" class="footer__link">ZipCode Wilmington</a>.
-                        Background image and all data presented comes from Unsplash and the <a target="_blank" rel="noreferrer" href="https://api.nasa.gov/" class="footer__link">NASA API</a>. Styles and design patterns credited to <a target="_blank" rel="noreferrer" href="https://www.udemy.com/user/jonasschmedtmann/" class="footer__link">Jonas
-                        Schmedtmann</a>. Planet svg by <a target="_blank" rel="noreferrer" href="https://codepen.io/Vico-Adomeit" class="footer__link">Vico Adomeit</a>.
+                <div className="col-1-of-2">
+                    <p className="footer__copyright">
+                        Built by <a target="_blank" rel="noreferrer" href="https://aprilcr87.github.io/portfolio/" className="footer__link">April Barman</a> as a sample project for students at <a target="_blank" rel="noreferrer" href="https://www.zipcodewilmington.com/" className="footer__link">ZipCode Wilmington</a>.
+                        Background image and all data presented comes from Unsplash and the <a target="_blank" rel="noreferrer" href="https://api.nasa.gov/" className="footer__link">NASA API</a>. Styles and design patterns credited to <a target="_blank" rel="noreferrer" href="https://www.udemy.com/user/jonasschmedtmann/" className="footer__link">Jonas
+                        Schmedtmann</a>. Planet svg by <a target="_blank" rel="noreferrer" href="https://codepen.io/Vico-Adomeit" className="footer__link">Vico Adomeit</a>.
                     </p>
                 </div>
             </div>

@@ -22,20 +22,25 @@ const Apod = () => {
   }, []);
 
   return (
-    <div className="background--apod">
-      <div className="apod-container">
+    <div className="background background--apod">
+      <div className="container">
+      <div className="apod-display">
       {apodInfo ? (
-        <div class="card text-dark bg-light mb-3 apod-container--card">
-          <div class="text-center">
-          <img src={apodInfo.url} class="img-fluid rounded mx-auto d-block apod-container--img" alt="random space view" />
+        <div className="card text-dark mb-3 apod-display--card" id="scrollbar">
+          <div className="text-center">
+          <img src={apodInfo.url} className="img-fluid rounded mx-auto d-block apod-display--img" alt="random space view" />
           </div>
-          <div class="card-body">
-            <h5 class="card-title">{apodInfo.title}</h5>
-            <p class="card-text">{apodInfo.explanation}</p>
-            <div class="container">
-              <div class="row">
-                <div class="col">{apodInfo.copyright}</div>
-                <div class="col">{apodInfo.date}</div>
+          <div className="card-body">
+            <h5 className="card-title">{apodInfo.title}</h5>
+            <p className="card-text">{apodInfo.explanation}</p>
+            <div className="container">
+              <div className="row">
+                <div className="col">
+                  <h6 className="card-subtitle mb-2 u-margin-bottom-small">{apodInfo.copyright}</h6>
+                </div>
+                <div className="col">
+                  <h6 className="card-subtitle mb-2 u-margin-bottom-small">{apodInfo.date}</h6>
+                </div>
               </div>
             </div>
           </div>
@@ -43,6 +48,7 @@ const Apod = () => {
       ) : (
         <div></div>
       )}
+      </div>
       </div>
     </div>
   );

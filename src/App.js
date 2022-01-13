@@ -5,11 +5,11 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Apod from "./pages/Apod";
 import Asteroids from "./pages/Asteroids";
-import MarsRover from "./pages/Home";
+import MarsRover from "./pages/MarsRover";
 
 function App() {
   return (
-    <div clas="container">
+    <div>
       <Navigation />
       <main>
         <Switch>
@@ -20,7 +20,6 @@ function App() {
         </Switch>
         <Footer />
       </main>
-      
     </div>
   );
 }

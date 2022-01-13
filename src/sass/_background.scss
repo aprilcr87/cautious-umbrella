@@ -1,16 +1,20 @@
 .background {
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 95vh;
+
     &--home {
-        height: 95vh;
         background-image: url("../../public/nasa-yZygONrUBe8-unsplash.jpg");
-        background-size: cover;
-        background-position: top;
-        position: relative;
+        
     }
 
     &--apod {
         background-image: url("../../public/nasa-5477L9Z5eqI-unsplash.jpg");
-        background-size: cover;
-        background-position: top;
-        position: relative;
+        
+    }
+
+    &--asteroids {
+        background-image: url("../../public/nasa-Q1p7bh3SHj8-unsplash.jpg");
     }
 }
