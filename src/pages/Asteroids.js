@@ -9,6 +9,7 @@ const Asteroids = () => {
   const [date, setDate] = useState(new Date());
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const currentDate = e || startDate;
@@ -36,6 +37,7 @@ const Asteroids = () => {
 
   const fetchNeo = useCallback(() => {
     console.log(startDate, endDate);
+    setLoading(!loading);
     async function fetchNeoByDate() {
       let neoUrl = buildNeoUrl(startDate, endDate);
       let response = await fetch(neoUrl, {
@@ -47,10 +49,19 @@ const Asteroids = () => {
       });
       response = await response.json();
       setAsteroidsList(response.near_earth_objects);
+      setLoading(!loading);
     }
     fetchNeoByDate();
-  }, [startDate, endDate]);
+  }, [startDate, endDate, loading]);
 
+
+  const loadingbar = () => {
+    return(
+      <div>
+        
+      </div>
+    );
+  }
   
   return (
     <div className="background background--asteroids">
@@ -62,10 +73,12 @@ const Asteroids = () => {
               prior to start date)
             </h4>
             <DatePicker selected={date} onChange={handleChange} withPortal />
-            <button onClick={fetchNeo}>Launch</button>
+            <hr />
+            <button className="round-btn round-btn--white" onClick={fetchNeo}>Launch</button>
           </div>
 
-          <div className="list-box">
+          <div className="list-box" id="scrollbar">
+            {loading ? loadingbar : ''}
             {startDate !== "" && asteroidsList
               ? _.map(asteroidsList, function (value, key) {
                   let id = _.uniqueId();
@@ -74,7 +87,8 @@ const Asteroids = () => {
                       <div className="accordion-item">
                         <h2 className="accordion-header" id="flush-headingOne">
                           <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={'#collapse' + id} aria-expanded="false" aria-controls="flush-collapseOne">
-                            {key}
+                            <span className="list-box__neo-date">{key}</span>
+                            <span className="list-box__neo-date--count">{value.length + ' objects'}</span>
                           </button>
                         </h2>
                         <div
@@ -111,7 +125,7 @@ const Asteroids = () => {
                     </div>
                   );
                 })
-              : <p>No asteroids for those dates.</p>}
+              : ''}
           </div>
         </div>
       </div>

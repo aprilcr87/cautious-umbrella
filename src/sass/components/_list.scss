@@ -1,0 +1,19 @@
+.list-box {
+    height: 40rem;
+    overflow-y: auto;
+    background-color: #ffffff6e;
+    &__neo-date {
+        font-size: medium;
+        font-weight: 600;
+        color: $shuttle-gray;
+
+        &--count {
+            margin-left: 5rem;
+            font-size: large;
+            font-weight: 400;
+            color: $nepal;
+            padding-left: 1rem;
+            text-align: center;
+        }
+    }
+}
