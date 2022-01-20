@@ -88,23 +88,38 @@ const Asteroids = () => {
                           data-bs-parent="#accordionFlushExample"
                         >
                           <div className="accordion-body">
-                            <ul className="list-group">
+                            <ul className="list-group asteroid-list">
                                 {value.map(v => (
-                                    <li className="list-group-item" key={v.id}>
-                                        <div className="card w-75">
-                                            <div className="card-body">
-                                                <h5 className="card-title">Name: {v.name}</h5>
-                                                <p className="card-text">Is hazardous: {v.is_potentially_hazardous_asteroid === true ? 'true' : 'false'}</p>
-                                                <hr className="dropdown-divider" />
-                                                <h5 className="card-title">Relative Velocity</h5>
-                                                <p className="card-text">Kilometers per hour: {v.close_approach_data[0].relative_velocity.kilometers_per_hour}</p>
-                                                <p className="card-text">Miles per hour: {v.close_approach_data[0].relative_velocity.miles_per_hour}</p>
-                                                <hr className="dropdown-divider" />
-                                                <h5 className="card-title">Miss Distance</h5>
-                                                <p className="card-text">Kilometers: {v.close_approach_data[0].miss_distance.kilometers}</p>
-                                                <p className="card-text">Miles: {v.close_approach_data[0].miss_distance.miles}</p>
-                                                <hr className="dropdown-divider" />
-                                            </div>
+                                    <li className="list-group-item asteroid-list__item" key={v.id}>
+                                        <h4 className="card-title">Name: {v.name}</h4>
+                                        <p className="card-text">Is hazardous: {v.is_potentially_hazardous_asteroid === true ? 'Yes' : 'No'}</p>
+                                        <p className="card-text">Absolute magnitutde: {v.absolute_magnitude_h}</p>
+                                        <div className="asteroid-list__item--content">
+                                        <div>
+                                            <hr className="dropdown-divider" />
+                                            <h5 className="card-subtitle text-muted">Estimated Diameter</h5>
+                                            <h6 className="lh-sm d-grid">Kilometers:
+                                            <span className="lh-1">Min - {v.estimated_diameter.kilometers.estimated_diameter_min}</span>
+                                            <span className="lh-1">Max - {v.estimated_diameter.kilometers.estimated_diameter_max}</span>
+                                            </h6>
+                                            
+                                            <h6 className="lh-sm d-grid">Miles: 
+                                            <span className="lh-1">Min - {v.estimated_diameter.miles.estimated_diameter_min}</span>
+                                            <span className="lh-1">Max - {v.estimated_diameter.miles.estimated_diameter_max}</span>
+                                            </h6>
+                                        </div>
+                                          <div>
+                                              <hr className="dropdown-divider" />
+                                              <h5 className="card-subtitle text-muted">Relative Velocity</h5>
+                                              <p className="card-text">Kilometers per hour: {v.close_approach_data[0].relative_velocity.kilometers_per_hour}</p>
+                                              <p className="card-text">Miles per hour: {v.close_approach_data[0].relative_velocity.miles_per_hour}</p>
+                                          </div>
+                                          <div>
+                                              <hr className="dropdown-divider" />
+                                              <h5 className="card-subtitle text-muted">Miss Distance</h5>
+                                              <p className="card-text">Kilometers: {v.close_approach_data[0].miss_distance.kilometers}</p>
+                                              <p className="card-text">Miles: {v.close_approach_data[0].miss_distance.miles}</p>
+                                          </div>
                                         </div>
                                     </li>
                                 ))}
