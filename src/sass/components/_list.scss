@@ -1,7 +1,10 @@
 .list-box {
     height: 40rem;
     overflow-y: auto;
-    background-color: #ffffff6e;
+
+    &__backgroundColor {
+        background-color: #ffffff6e;
+    }
     &__neo-date {
         font-size: medium;
         font-weight: 600;

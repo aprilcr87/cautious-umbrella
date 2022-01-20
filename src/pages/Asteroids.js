@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import _ from "lodash";
 import { buildNeoUrl } from "../service";
+import Loading from '../components/Loading';
 
 const Asteroids = () => {
   const [asteroidsList, setAsteroidsList] = useState({});
@@ -15,9 +16,6 @@ const Asteroids = () => {
     const currentDate = e || startDate;
     let formattedStartDate = formatDate(currentDate);
     let calculatedEndDate = subtractDays(currentDate, 7);
-    console.log(e);
-    console.log(formattedStartDate);
-    console.log(calculatedEndDate.toISOString().substring(0, 10));
     setDate(e);
     setStartDate(formattedStartDate);
     setEndDate(calculatedEndDate.toISOString().substring(0, 10));
@@ -36,8 +34,8 @@ const Asteroids = () => {
   }
 
   const fetchNeo = useCallback(() => {
-    console.log(startDate, endDate);
-    setLoading(!loading);
+    setAsteroidsList([]);
+    setLoading(true);
     async function fetchNeoByDate() {
       let neoUrl = buildNeoUrl(startDate, endDate);
       let response = await fetch(neoUrl, {
@@ -48,20 +46,11 @@ const Asteroids = () => {
         },
       });
       response = await response.json();
+      setLoading(false);
       setAsteroidsList(response.near_earth_objects);
-      setLoading(!loading);
     }
     fetchNeoByDate();
-  }, [startDate, endDate, loading]);
-
-
-  const loadingbar = () => {
-    return(
-      <div>
-        
-      </div>
-    );
-  }
+  }, [startDate, endDate]);
   
   return (
     <div className="background background--asteroids">
@@ -76,14 +65,15 @@ const Asteroids = () => {
             <hr />
             <button className="round-btn round-btn--white" onClick={fetchNeo}>Launch</button>
           </div>
+          
+          {loading ? <Loading />: ''}
 
-          <div className="list-box" id="scrollbar">
-            {loading ? loadingbar : ''}
+          <div className={_.isEmpty(asteroidsList) ? "list-box" : "list-box list-box__backgroundColor"} id="scrollbar">
             {startDate !== "" && asteroidsList
               ? _.map(asteroidsList, function (value, key) {
                   let id = _.uniqueId();
                   return (
-                    <div className="accordion accordion-flush" id={id}>
+                    <div className="accordion accordion-flush" id={id} key={key}>
                       <div className="accordion-item">
                         <h2 className="accordion-header" id="flush-headingOne">
                           <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={'#collapse' + id} aria-expanded="false" aria-controls="flush-collapseOne">

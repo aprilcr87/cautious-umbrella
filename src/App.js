@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./sass/main.scss";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -12,12 +12,12 @@ function App() {
     <div>
       <Navigation />
       <main>
-        <Switch>
-          <Route exact={true} path="/" component={Home} />
-          <Route exact={true} path="/apod" component={Apod} />
-          <Route exact={true} path="/asteroids" component={Asteroids} />
-          <Route exact={true} path="/mars" component={MarsRover} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/apod" element={<Apod />} />
+          <Route path="/asteroids" element={<Asteroids />} />
+          <Route path="/mars" element={<MarsRover />} />
+        </Routes>
         <Footer />
       </main>
     </div>

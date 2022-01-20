@@ -11,13 +11,13 @@ const Navigation = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" aria-current="page" to="/apod">Apod</Link>
+              <Link className="nav-link" aria-current="page" to="apod">Apod</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/asteroids">Asteroids</Link>
+              <Link className="nav-link" to="asteroids">Asteroids</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/mars">Mars Rover</Link>
+              <Link className="nav-link" to="mars">Mars Rover</Link>
             </li>
           </ul>
         </div>
