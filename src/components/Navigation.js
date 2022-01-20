@@ -5,7 +5,7 @@ const Navigation = () => {
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <span className="navbar-brand mb-0 h1">
-          <i className="fas fa-user-astronaut"></i>
+          <i className="fas fa-user-astronaut"/>
           <Link to="/" className="logo-btn">Space Cadet</Link>
         </span>
         <div className="collapse navbar-collapse" id="navbarNav">
