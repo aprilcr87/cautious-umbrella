@@ -1,9 +1,16 @@
-.input-box {
+.asteroids-input-container {
     text-align: center;
     margin: 0 1rem 1rem 1rem;
     padding-top: 1rem;
 
     &__heading {
         color: $color-white;
+    }
+}
+
+.rover-select {
+    width: 20%;
+    &--label {
+        color: white;
     }
 }

@@ -56,8 +56,8 @@ const Asteroids = () => {
     <div className="background background--asteroids">
       <div className="container">
         <div className="asteroids-container">
-          <div className="input-box">
-            <h4 className="input-box__heading">
+          <div className="asteroids-input-container">
+            <h4 className="asteroids-input-container__heading">
               Choose a start date and we'll show you Neos for that week (7 days
               prior to start date)
             </h4>
